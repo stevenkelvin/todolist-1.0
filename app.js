@@ -9,12 +9,12 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-let lists = ["Buy Food", "Cook Food", "Eat Food"];
-let workLists = [];
+const lists = ["Buy Food", "Cook Food", "Eat Food"];
+const workLists = [];
 
 app.get("/", function (req, res) {
 
-    let day = date();
+    const day = date.getDate();
 
     res.render("list", {listTitle: day, newLists: lists});
 });
